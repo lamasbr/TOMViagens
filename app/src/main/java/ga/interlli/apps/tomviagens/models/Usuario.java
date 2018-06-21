@@ -1,26 +1,60 @@
 package ga.interlli.apps.tomviagens.models;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 public class Usuario {
 
+    @SerializedName("id")
     private int id;
-    private String nome, email, login, senha;
+
+    @SerializedName("nome")
+    private String nome;
+
+    @SerializedName("email")
+    private String email;
+
+    @SerializedName("login")
+    private String login;
+
+    @SerializedName("senha")
+    private String  senha;
+
+    @SerializedName("ativo")
+    private boolean ativo;
+
+    @SerializedName("passagens")
+    private List<Passagem> passagens;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nome, String email, String login, String senha) {
+    public Usuario(int id, String nome, String email, String login, String senha, boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.login = login;
         this.senha = senha;
+        this.ativo = ativo;
     }
 
-    public Usuario(String nome, String email, String login, String senha) {
+    public Usuario(String nome, String email, String login, String senha, boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.login = login;
         this.senha = senha;
+        this.ativo = ativo;
+    }
+
+    public Usuario(int id, String nome, String email, String login, String senha, boolean ativo, List<Passagem> passagens) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+        this.ativo = ativo;
+        this.passagens = passagens;
     }
 
     public int getId() {
@@ -61,5 +95,21 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public List<Passagem> getPassagens() {
+        return passagens;
+    }
+
+    public void setPassagens(List<Passagem> passagens) {
+        this.passagens = passagens;
     }
 }
