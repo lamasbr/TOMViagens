@@ -1,4 +1,4 @@
-package ga.interlli.apps.tomviagens;
+package ga.interlli.apps.tomviagens.api;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
