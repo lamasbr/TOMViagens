@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#2072fc</color>
+    <color name="colorPrimaryDark">#164e87</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="bgMainActivity">#164e87</color>
+    <color name="btnPrimaryColor">#2072fc</color>
+    <color name="btnSecondayColor">#f1f7f9</color>
 </resources>
