@@ -1,10 +1,19 @@
 package ga.interlli.apps.tomviagens.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Passagem {
 
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("usuario")
     private Usuario usuario;
+
+    @SerializedName("assento")
     private String assento;
+
+    @SerializedName("ocupado")
     private boolean ocupado;
 
     public Passagem(int id, Usuario usuario, String assento, boolean ocupado) {
