@@ -66,7 +66,7 @@ public class UsuarioLoginService extends AsyncTask<String, Void, Usuario> {
 
                 // Converte JSON retornado pela API para objeto usuario
                 usuario = new Gson().fromJson(buffer.toString(), Usuario.class);
-                Log.d("JSON API", buffer.toString());
+                Log.d("API USU RETORNO", buffer.toString());
             } else {
                 Log.e("ERRO API", String.valueOf(httpsURLConnection.getResponseCode()) + httpsURLConnection.getResponseMessage());
                 return null;

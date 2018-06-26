@@ -2,10 +2,11 @@ package ga.interlli.apps.tomviagens.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Voo {
+public class Voo implements Serializable {
 
     @SerializedName("id")
     private int id;
@@ -23,14 +24,14 @@ public class Voo {
     private double valorPassagem;
 
     @SerializedName("dataVoo")
-    private Date dataVoo;
+    private String dataVoo;
 
     private List<Poltrona> poltronas;
 
     public Voo() {
     }
 
-    public Voo(int id, Aeroporto origem, Aeroporto destino, Aviao aviao, double valorPassagem, Date dataVoo) {
+    public Voo(int id, Aeroporto origem, Aeroporto destino, Aviao aviao, double valorPassagem, String dataVoo) {
         this.id = id;
         this.origem = origem;
         this.destino = destino;
@@ -39,7 +40,7 @@ public class Voo {
         this.dataVoo = dataVoo;
     }
 
-    public Voo(int id, Aeroporto origem, Aeroporto destino, Aviao aviao, double valorPassagem, Date dataVoo, List<Poltrona> poltronas) {
+    public Voo(int id, Aeroporto origem, Aeroporto destino, Aviao aviao, double valorPassagem, String dataVoo, List<Poltrona> poltronas) {
         this.id = id;
         this.origem = origem;
         this.destino = destino;
@@ -89,11 +90,11 @@ public class Voo {
         this.valorPassagem = valorPassagem;
     }
 
-    public Date getDataVoo() {
+    public String getDataVoo() {
         return dataVoo;
     }
 
-    public void setDataVoo(Date dataVoo) {
+    public void setDataVoo(String dataVoo) {
         this.dataVoo = dataVoo;
     }
 

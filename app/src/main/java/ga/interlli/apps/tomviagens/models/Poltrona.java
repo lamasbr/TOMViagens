@@ -1,6 +1,8 @@
 package ga.interlli.apps.tomviagens.models;
 
-public class Poltrona {
+import java.io.Serializable;
+
+public class Poltrona implements Serializable {
 
     private int id;
     private Voo voo;

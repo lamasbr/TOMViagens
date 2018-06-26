@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts" />
+
         <activity android:name=".activities.UsuarioLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.UsuarioCadastroActivity"></activity>
+        <activity android:name=".activities.UsuarioCadastroActivity" />
+        <activity android:name=".activities.VooDetalheActivity" />
+
     </application>
 
 </manifest>

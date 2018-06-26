@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:singleLine="true"
             android:textColor="@color/btnSecondayColor" />
     </android.support.design.widget.TextInputLayout>
 
@@ -58,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:singleLine="true"
             android:textColor="@color/btnSecondayColor" />
     </android.support.design.widget.TextInputLayout>
 
@@ -78,11 +80,13 @@
             android:id="@+id/edtLoginCad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:singleLine="true"
             android:textColor="@color/btnSecondayColor" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayoutSenha"
+        android:id="@+id/tilSenhaCad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -98,7 +102,8 @@
             android:id="@+id/edtSenhaCad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword|numberPassword"
+            android:inputType="textPassword"
+            android:singleLine="true"
             android:textColor="@color/btnSecondayColor" />
     </android.support.design.widget.TextInputLayout>
 
@@ -107,28 +112,28 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:background="@color/btnPrimaryColor"
         android:text="Cadastrar"
+        app:layout_constraintBottom_toTopOf="@+id/btnItnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSenha" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnItnLogin"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="Já possui cadastro? Identifique-se!"
         android:textAllCaps="false"
         android:textColor="@color/btnSecondayColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCadastrar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

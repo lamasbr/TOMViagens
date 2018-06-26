@@ -6,45 +6,34 @@ import android.util.Log;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import ga.interlli.apps.tomviagens.models.Usuario;
-import ga.interlli.apps.tomviagens.utils.CadastroData;
+import ga.interlli.apps.tomviagens.models.Voo;
 
-/**
- * Created by lincoln.lamas on 25/06/2018.
- */
+public class VooDetalheService extends AsyncTask<String, Void, Voo> {
 
-public class UsuarioCadastroService extends AsyncTask<String, Void, Usuario>{
-
-    private Usuario usuario;
-    private final String API = "https://service.davesmartins.com.br/api/usuarios/";
+    private Voo voo;
+    private final String API = "https://service.davesmartins.com.br/api/voo/";
 
     @Override
-    protected Usuario doInBackground(String... strings) {
-        try {
-            URL url = new URL(API);
+    protected Voo doInBackground(String... strings) {
+        try{
+            URL url = new URL(API + strings[0]);
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) url.openConnection();
             httpsURLConnection.setReadTimeout(1000);
             httpsURLConnection.setConnectTimeout(1000);
 
             httpsURLConnection.setDoInput(true);
+            httpsURLConnection.setRequestMethod("GET");
             httpsURLConnection.setRequestProperty("Content-Type", "application/json");
             httpsURLConnection.setRequestProperty("Accept", "application/json");
-            httpsURLConnection.setRequestMethod("POST");
-
-            // Usa classe POJO CadastroData para converter para JSON (nome, email, login, senha)
-            CadastroData cadastroData = new CadastroData(strings[0], strings[1], strings[2], strings[3]);
-            String cadastroDataJson = new Gson().toJson(cadastroData);
-
-            httpsURLConnection.setDoOutput(true);
-            httpsURLConnection.getOutputStream().write(cadastroDataJson.getBytes());
+            httpsURLConnection.setRequestProperty("code", strings[1]);
             httpsURLConnection.connect();
 
             if(httpsURLConnection.getResponseCode() == 200){
@@ -58,19 +47,19 @@ public class UsuarioCadastroService extends AsyncTask<String, Void, Usuario>{
                     buffer.append(line);
                 }
 
-                // Converte JSON retornado pela API para objeto usuario
-                usuario = new Gson().fromJson(buffer.toString(), Usuario.class);
-                Log.d("API CAD USU RETORNO", buffer.toString());
+                // Converte o JSON retornado pela API em um objeto voo
+                voo = new Gson().fromJson(buffer.toString(), Voo.class);
+                Log.d("API VOO RETORNO", buffer.toString());
             } else {
                 Log.e("ERRO API", String.valueOf(httpsURLConnection.getResponseCode()) + httpsURLConnection.getResponseMessage());
                 return null;
             }
 
-        } catch (IOException e){
+        }catch (IOException e){
             Log.e("ERRO API", e.toString());
             return null;
         }
 
-        return usuario;
+        return voo;
     }
 }

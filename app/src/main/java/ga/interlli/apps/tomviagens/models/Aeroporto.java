@@ -1,9 +1,18 @@
 package ga.interlli.apps.tomviagens.models;
 
-public class Aeroporto {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class Aeroporto implements Serializable {
+
+    @SerializedName("id")
     private int id;
+
+    @SerializedName("cidade")
     private String cidade;
+
+    @SerializedName("aeroporto")
     private String aeroporto;
 
     public Aeroporto() {

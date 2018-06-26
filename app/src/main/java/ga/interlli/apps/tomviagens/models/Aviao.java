@@ -2,7 +2,9 @@ package ga.interlli.apps.tomviagens.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Aviao {
+import java.io.Serializable;
+
+public class Aviao implements Serializable {
 
     @SerializedName("id")
     private int id;

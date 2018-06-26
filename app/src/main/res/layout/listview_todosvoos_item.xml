@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgAzul"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvVooOrigem"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="Origem"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/btnSecondayColor" />
+
+    <TextView
+        android:id="@+id/tvVooDestino"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="Destino"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/btnSecondayColor" />
+
+    <TextView
+        android:id="@+id/tvVooPreco"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:text="Preço"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/btnSecondayColor" />
+</LinearLayout>
